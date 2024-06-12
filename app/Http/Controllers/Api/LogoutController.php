@@ -5,9 +5,6 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Tymon\JWTAuth\Facades\JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Exceptions\TokenExpiredException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 
 class LogoutController extends Controller
 {
@@ -18,15 +15,15 @@ class LogoutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
-    {        
+    {
         //remove token
         $removeToken = JWTAuth::invalidate(JWTAuth::getToken());
 
-        if($removeToken) {
+        if ($removeToken) {
             //return response JSON
             return response()->json([
                 'success' => true,
-                'message' => 'Logout Berhasil!',  
+                'message' => 'Logout Berhasil!',
             ]);
         }
     }

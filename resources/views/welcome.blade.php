@@ -36,7 +36,6 @@
                 <button id="btn-login"><a href={{ route('login') }}>Login</a></button>
                 <button id="btn-signup"><a href={{ route('signup') }}>Sign up</a></button>
             @endif
-
             <i class="fa-solid fa-user"></i>
             <i class="fa-solid fa-hand-holding-dollar"></i>
         </div>
@@ -169,7 +168,7 @@
     <div class="container" id="product-cards">
         <h1 class="text-center">PRODUCT</h1>
         <div class="row" style="margin-top: 30px ">
-            <div class="col-md-3 py-3 py-md-0">
+            {{-- <div class="col-md-3 py-3 py-md-0">
                 <div class="card">
                     <img src="./image/ikanGurame.jpg" alt="" />
                     <div class="card-body">
@@ -184,14 +183,46 @@
                         </div>
                         <h5>
                             Rp. 15.000/kg
-                            <a href={{route('checkout')}}><i class="fa-solid fa-hand-holding-dollar"></i></a>
+                            <a href={{ route('checkout.show') }}><i class="fa-solid fa-hand-holding-dollar"></i></a>
                         </h5>
+                    </div>
+                </div>
+            </div> --}}
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="{{ asset('image/ikanNila.jpg') }}" alt="Ikan Nila" />
+                    <div class="card-body">
+                        <h3>Ikan Nila</h3>
+                        <p>Ikan segar langsung dari tambak</p>
+                        <div class="star">
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                            <i class="fas fa-star checked"></i>
+                        </div>
+                        <h5>
+                            Rp. 15.000/kg
+                            <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
+                        </h5>
+                        @if (session('token'))
+                            <form action="{{ route('checkout.show') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_name" value="Ikan Nila">
+                                <input type="hidden" name="product_price" value="15000">
+                                <button type="submit" class="btn btn-primary mt-3">Beli</button>
+                            </form>
+                        @else
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <a href="{{ route('login') }}" style="color: white; text-decoration: none;">Beli</a>
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
             <div class="col-md-3 py-3 py-md-0">
                 <div class="card">
-                    <img src="./image/ikanLele.jpg" alt="" />
+                    <img src="./image/ikanLele.jpg" alt="Ikan Lele" />
                     <div class="card-body">
                         <h3>Ikan Lele</h3>
                         <p>Ikan lele segar dari tambak</p>
@@ -206,6 +237,18 @@
                             Rp. 12.000/kg
                             <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
                         </h5>
+                        @if (session('token'))
+                            <form action="{{ route('checkout.show') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_name" value="Ikan Lele">
+                                <input type="hidden" name="product_price" value="12000">
+                                <button type="submit" class="btn btn-primary mt-3">Beli</button>
+                            </form>
+                        @else
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <a href="{{ route('login') }}" style="color: white; text-decoration: none;">Beli</a>
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -226,6 +269,18 @@
                             Rp. 60.000/kg
                             <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
                         </h5>
+                        @if (session('token'))
+                            <form action="{{ route('checkout.show') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_name" value="Kepiting">
+                                <input type="hidden" name="product_price" value="60000">
+                                <button type="submit" class="btn btn-primary mt-3">Beli</button>
+                            </form>
+                        @else
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <a href="{{ route('login') }}" style="color: white; text-decoration: none;">Beli</a>
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -246,6 +301,18 @@
                             Rp. 50.000/kg
                             <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
                         </h5>
+                        @if (session('token'))
+                            <form action="{{ route('checkout.show') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_name" value="Udang Vaname">
+                                <input type="hidden" name="product_price" value="50000">
+                                <button type="submit" class="btn btn-primary mt-3">Beli</button>
+                            </form>
+                        @else
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <a href="{{ route('login') }}" style="color: white; text-decoration: none;">Beli</a>
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -269,6 +336,18 @@
                             Rp. 15.000/kg
                             <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
                         </h5>
+                        @if (session('token'))
+                            <form action="{{ route('checkout.show') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_name" value="Ikan Nila">
+                                <input type="hidden" name="product_price" value="15000">
+                                <button type="submit" class="btn btn-primary mt-3">Beli</button>
+                            </form>
+                        @else
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <a href="{{ route('login') }}" style="color: white; text-decoration: none;">Beli</a>
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -289,6 +368,18 @@
                             Rp. 15.000/kg
                             <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
                         </h5>
+                        @if (session('token'))
+                            <form action="{{ route('checkout.show') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_name" value="Ikan Nila">
+                                <input type="hidden" name="product_price" value="15000">
+                                <button type="submit" class="btn btn-primary mt-3">Beli</button>
+                            </form>
+                        @else
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <a href="{{ route('login') }}" style="color: white; text-decoration: none;">Beli</a>
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -309,6 +400,18 @@
                             Rp. 15.000/kg
                             <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
                         </h5>
+                        @if (session('token'))
+                            <form action="{{ route('checkout.show') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_name" value="Ikan Nila">
+                                <input type="hidden" name="product_price" value="15000">
+                                <button type="submit" class="btn btn-primary mt-3">Beli</button>
+                            </form>
+                        @else
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <a href="{{ route('login') }}" style="color: white; text-decoration: none;">Beli</a>
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -329,6 +432,18 @@
                             Rp. 15.000/kg
                             <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
                         </h5>
+                        @if (session('token'))
+                            <form action="{{ route('checkout.show') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_name" value="Ikan Nila">
+                                <input type="hidden" name="product_price" value="15000">
+                                <button type="submit" class="btn btn-primary mt-3">Beli</button>
+                            </form>
+                        @else
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <a href="{{ route('login') }}" style="color: white; text-decoration: none;">Beli</a>
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -407,12 +522,11 @@
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, rem!</p>
+                        <h4>Produk kami</h4>
                         <ul>
-                            <li><a href="#">Smart phone</a></li>
-                            <li><a href="#">Smart watch</a></li>
-                            <li><a href="#">Airpods</a></li>
+                            <li><a href="#">Ikan Segar</a></li>
+                            <li><a href="#">Kepiting Segar</a></li>
+                            <li><a href="#">Udang Segar</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">

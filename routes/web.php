@@ -38,8 +38,7 @@ Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
 
-Route::get('/checkout', [CheckoutController::class, 'showCheckout'])->name('checkout');
-
+Route::post('/checkout', [CheckoutController::class, 'showCheckout'])->name('checkout.show');
 
 Route::get('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::post('/signup', [AuthController::class, 'signupPost'])->name('signup');

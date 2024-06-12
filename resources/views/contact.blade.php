@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion</title>
+    <title>Tambakku</title>
     <link rel="shortcut icon" type="image" href="./image/logo2.png">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -30,11 +30,15 @@
             <i class="fa-brands fa-instagram"></i>
         </div>
         <div class="other-links">
-            <button id="btn-login"><a href="login.html">Login</a></button>
-            <button id="btn-signup"><a href="signup.html">Sign up</a></button>
-
+            @if (session('token'))
+                <p>{{ session('account')['username'] }}</p>
+                <form action={{ route('logout') }} method="POST">@csrf<button type="submit">Logout</button></form>
+            @else
+                <button id="btn-login"><a href={{ route('login') }}>Login</a></button>
+                <button id="btn-signup"><a href={{ route('signup') }}>Sign up</a></button>
+            @endif
             <i class="fa-solid fa-user"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-hand-holding-dollar"></i>
         </div>
     </div>
     <!-- top navbar -->

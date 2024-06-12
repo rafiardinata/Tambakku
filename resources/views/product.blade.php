@@ -22,6 +22,27 @@
 
 <body>
 
+    <!-- top navbar -->
+    <div class="top-navbar">
+        <div class="top-icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+        <div class="other-links">
+            @if (session('token'))
+                <p>{{ session('account')['username'] }}</p>
+                <form action={{ route('logout') }} method="POST">@csrf<button type="submit">Logout</button></form>
+            @else
+                <button id="btn-login"><a href={{ route('login') }}>Login</a></button>
+                <button id="btn-signup"><a href={{ route('signup') }}>Sign up</a></button>
+            @endif
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+        </div>
+    </div>
+    <!-- top navbar -->
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container-fluid">

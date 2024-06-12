@@ -48,7 +48,7 @@ class AuthController extends Controller
                 'account' => $response->json()['user']
             ]);
             return redirect('/welcome');
-        } else if ($response->json()['error']) {
+        } else {
             return back()->with('error', 'Error Email or Password');
         }
     }

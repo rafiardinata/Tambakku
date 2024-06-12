@@ -41,7 +41,7 @@
                     };
                 </script>
             @endif
-            <pre><div id="result-json"></div></pre>
+            {{-- <pre><div id="result-json"></div></pre> --}}
         </div>
     </div>
 </body>

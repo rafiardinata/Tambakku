@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion</title>
+    <title>TAMBAKKU</title>
     <link rel="shortcut icon" type="image" href="./image/logo2.png">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -107,8 +107,8 @@
                         @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
-                            <input type="email" name="email" class="form-control" id="email"
-                                placeholder="Email" required>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Email"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>

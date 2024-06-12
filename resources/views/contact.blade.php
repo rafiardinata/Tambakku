@@ -161,12 +161,11 @@
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, rem!</p>
+                        <h4>Produk kami</h4>
                         <ul>
-                            <li><a href="#">Smart phone</a></li>
-                            <li><a href="#">Smart watch</a></li>
-                            <li><a href="#">Airpods</a></li>
+                            <li><a href="#">Ikan Segar</a></li>
+                            <li><a href="#">Kepiting Segar</a></li>
+                            <li><a href="#">Udang Segar</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">

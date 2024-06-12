@@ -13,24 +13,12 @@
         <h1>Checkout</h1>
         <div class="payment-details">
             <h2>Payment Information</h2>
-            <form method="GET" action="{{ route('checkout') }}">
+            <p>Product: {{ $product_name }}</p>
+            <p>Price: Rp. {{ number_format($product_price) }}</p>
+            <form method="POST" action="{{ route('checkout.show') }}">
                 @csrf
-                <div class="form-group">
-                    <label for="name">Nama Pembeli</label>
-                    <input type="text" id="card-name" name="card-name" placeholder="Nama Pembeli" required>
-                </div>
-                <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <input type="text" id="alamat" name="alamat" placeholder="Alamat" required>
-                </div>
-                <div class="form-group">
-                    <label for="jumlah">Jumlah</label>
-                    <input type="number" id="jumlah" name="jumlah" placeholder="Jumlah" required>
-                </div>
-                <div class="form-group">
-                    <label for="harga">Harga</label>
-                    <input type="text" id="harga" name="harga" placeholder="Contoh : Rp 20.000/Kg" required>
-                </div>
+                <input type="hidden" name="product_name" value="{{ $product_name }}">
+                <input type="hidden" name="product_price" value="{{ $product_price }}">
                 <button type="submit" class="btn btn-primary mt-3" id="pay-button">Pilih Pembayaran</button>
             </form>
             @if (isset($snap_token))
@@ -53,7 +41,7 @@
                     };
                 </script>
             @endif
-            {{-- <pre><div id="result-json"></div></pre> --}}
+            <pre><div id="result-json"></div></pre>
         </div>
     </div>
 </body>

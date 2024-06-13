@@ -36,7 +36,9 @@
                 <button id="btn-login"><a href={{ route('login') }}>Login</a></button>
                 <button id="btn-signup"><a href={{ route('signup') }}>Sign up</a></button>
             @endif
-            <i class="fa-solid fa-user"></i>
+            <a href="{{ route('update') }}" class="button">
+                <i class="fa-solid fa-user"></i>
+            </a>            
             <i class="fa-solid fa-hand-holding-dollar"></i>
         </div>
     </div>
@@ -56,6 +58,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href={{ route('product') }}>Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={{ route('ongkir') }}>Cek Ongkir</a>
                     </li>
                     {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -210,6 +215,10 @@
                                 @csrf
                                 <input type="hidden" name="product_name" value="Ikan Nila">
                                 <input type="hidden" name="product_price" value="15000">
+                                <div class="form-control">
+                                    <label for="quantity">Jumlah Pemesanan</label>
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-3">Beli</button>
                             </form>
                         @else
@@ -242,6 +251,10 @@
                                 @csrf
                                 <input type="hidden" name="product_name" value="Ikan Lele">
                                 <input type="hidden" name="product_price" value="12000">
+                                <div class="form-control">
+                                    <label for="quantity">Jumlah Pemesanan</label>
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-3">Beli</button>
                             </form>
                         @else
@@ -274,6 +287,10 @@
                                 @csrf
                                 <input type="hidden" name="product_name" value="Kepiting">
                                 <input type="hidden" name="product_price" value="60000">
+                                <div class="form-control">
+                                    <label for="quantity">Jumlah Pemesanan</label>
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-3">Beli</button>
                             </form>
                         @else
@@ -306,6 +323,10 @@
                                 @csrf
                                 <input type="hidden" name="product_name" value="Udang Vaname">
                                 <input type="hidden" name="product_price" value="50000">
+                                <div class="form-control">
+                                    <label for="quantity">Jumlah Pemesanan</label>
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-3">Beli</button>
                             </form>
                         @else
@@ -341,6 +362,10 @@
                                 @csrf
                                 <input type="hidden" name="product_name" value="Ikan Nila">
                                 <input type="hidden" name="product_price" value="15000">
+                                <div class="form-control">
+                                    <label for="quantity">Jumlah Pemesanan</label>
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-3">Beli</button>
                             </form>
                         @else
@@ -373,6 +398,10 @@
                                 @csrf
                                 <input type="hidden" name="product_name" value="Ikan Nila">
                                 <input type="hidden" name="product_price" value="15000">
+                                <div class="form-control">
+                                    <label for="quantity">Jumlah Pemesanan</label>
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-3">Beli</button>
                             </form>
                         @else
@@ -405,6 +434,10 @@
                                 @csrf
                                 <input type="hidden" name="product_name" value="Ikan Nila">
                                 <input type="hidden" name="product_price" value="15000">
+                                <div class="form-control">
+                                    <label for="quantity">Jumlah Pemesanan</label>
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-3">Beli</button>
                             </form>
                         @else
@@ -437,6 +470,10 @@
                                 @csrf
                                 <input type="hidden" name="product_name" value="Ikan Nila">
                                 <input type="hidden" name="product_price" value="15000">
+                                <div class="form-control">
+                                    <label for="quantity">Jumlah Pemesanan</label>
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-3">Beli</button>
                             </form>
                         @else

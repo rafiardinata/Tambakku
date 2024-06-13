@@ -17,6 +17,7 @@ class CheckoutController extends Controller
         $request->validate([
             'product_name' => 'required|string',
             'product_price' => 'required|integer',
+            'quantity' => 'required|integer|min:1',
         ]);
 
         // Set Midtrans configuration
@@ -28,11 +29,13 @@ class CheckoutController extends Controller
         // Get product details from the request
         $productName = $request->input('product_name');
         $productPrice = $request->input('product_price');
+        $quantity = $request->input('quantity');
+        $totalPrice = $productPrice * $quantity;
 
         // Create transaction details
         $transactionDetails = [
             'order_id' => uniqid(),
-            'gross_amount' => $productPrice, // Example amount
+            'gross_amount' => $totalPrice // Example amount
         ];
 
         // Create customer details
@@ -63,7 +66,9 @@ class CheckoutController extends Controller
         return view('checkout', [
             'snap_token' => $snapToken,
             'product_name' => $productName,
-            'product_price' => $productPrice
+            'product_price' => $productPrice,
+            'quantity' => $quantity,
+            'total_price' => $totalPrice
         ]);
 
         // Debugging: ensure $snapToken is not null

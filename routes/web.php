@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OngkirController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\Api\UpdateController;
 
 Route::get('/', function () {
     // $respons=Http::get('http://localhost/user_management_api/api/user.php');
@@ -37,6 +40,14 @@ Route::get('/product', function () {
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
+
+// Route::get('/update', 'AccountController');
+// Route::post('/update', 'AccountController')->name('update');
+Route::get('/update', [AccountController::class, 'showUpdate'])->name('update');
+Route::post('/update', [AccountController::class, 'update'])->name('update');
+
+Route::get('/ongkir', [OngkirController::class, 'showOngkir'])->name('ongkir');
+Route::post('/ongkir', [OngkirController::class, 'cekOngkir'])->name('ongkir');
 
 Route::post('/checkout', [CheckoutController::class, 'showCheckout'])->name('checkout.show');
 
